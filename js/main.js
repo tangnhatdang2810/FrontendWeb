@@ -478,4 +478,28 @@ function loadCartToHTML() {
   total_price.textContent = formatVND(sum);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  // Lấy form đăng nhập
+  const loginForm = document.querySelector(".frm-login");
+
+  if (loginForm) {
+      loginForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Ngăn chặn reload trang
+
+          // Lấy giá trị email và password
+          const email = document.getElementById("email").value;
+          const password = document.getElementById("password").value;
+
+          // Kiểm tra nếu là tài khoản admin
+          if (email === "admin@gmail.com" && password === "admin123") {
+              window.location.href = "dashboard.html"; // Chuyển trang nếu đúng
+          } else {
+              // Hiển thị thông báo lỗi trong HTML thay vì alert
+              const errorMessage = document.getElementById("validate-password");
+              errorMessage.textContent = "Email hoặc mật khẩu không đúng!";
+          }
+      });
+  }
+});
+
 initApp();
