@@ -124,6 +124,20 @@
   color: #fe4f19;
 }
 
+.btn-filter {
+  background-color: #23b55c;
+  color: white;
+  border: none;
+  width: 100px; 
+  transition: background-color 0.3s ease;
+  float: right;
+}
+
+.btn-filter:hover {
+  background-color: black;
+  color: white;
+}
+
 @media (max-width: 992px) {
   .product-list-store {
     grid-template-columns: 1fr 1fr;
